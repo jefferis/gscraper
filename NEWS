@@ -1,3 +1,7 @@
+gscraper 0.1-1
+============
+* Fix bug in extract_links (and add tests)
+
 gscraper 0.1
 ============
 * First version on lab R repo

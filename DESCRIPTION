@@ -1,7 +1,7 @@
 Package: gscraper
 Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Author: Gregory Jefferis
-Version: 0.1
+Version: 0.1-1
 Date: 2013-06-17
 License: GPL-3
 Title: Basic web scraping - designed to generate local cache of remote website
