@@ -3,10 +3,13 @@ Maintainer: Gregory Jefferis <jefferis@gmail.com>
 Author: Gregory Jefferis
 Version: 0.1
 License: GPL-3
-Title: 
-Description: 
+Title: Basic web scraping - designed to generate local cache of remote website
+Description: Simple functions to download remote files to local disk
+    preserving remote directory organisation. Uses system calls to access curl,
+    therefore restricted to unix or cygwin.
 Suggests:
     testthat,
     roxygen2
 Collate:
     'gscraper-package.r'
+SystemRequirements: curl (available via system calls)
