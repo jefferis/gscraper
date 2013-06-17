@@ -30,18 +30,20 @@ parseurlheader<-function(header){
 #' @author jefferis
 #' @export
 #' @seealso \code{\link{grep},\link{getHTMLLinks}}
-#' @importFrom XML getRelativeURL
-extract_links<-function(body,linktype="href",regex,fixed=FALSE,
-    rooturl=attr(body,'url'),absolute=TRUE){
+#' @importFrom XML getRelativeURL parseURI
+extract_links<-function(body,linktype="href",regex=NULL,fixed=FALSE,
+    rooturl=attr(body,'url'),absolute=TRUE,USE.NAMES=FALSE){
   t2=body[grep(linktype,body,fixed=fixed)]
   t3=unlist(strsplit(t2,"><")) # split lines with multiple html fields
   t4=t3[grep(linktype,t3,fixed=fixed)] # just keep the ones that still match linktype
   links=sub(paste(".*",linktype,"=\"([^\"]+).*",sep=""),"\\1",t4)
   
-  if(!missing(regex)) links=links[grep(regex,links,fixed=fixed)]
+  if(!is.null(regex)) links=links[grep(regex,links,fixed=fixed)]
   
   if(absolute && !is.null(rooturl)) {
+    if(parseURI(rooturl)$path=="") rooturl=paste(rooturl,'/',sep='')
     links=getRelativeURL(links,rooturl)
+    if(!USE.NAMES) names(links)<-NULL
   }
   links
 }
