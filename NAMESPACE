@@ -1,0 +1,6 @@
+export(extract_links)
+export(fetch_missing_pages_parallel)
+export(fetch_page)
+export(parseurlheader)
+export(remotepath)
+importFrom(XML,getRelativeURL)
