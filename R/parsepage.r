@@ -26,6 +26,7 @@ parseurlheader<-function(header){
 #' @param fixed Whether regular expression is fixed
 #' @param rooturl Base url for expansion of relative links
 #' @param absolute Whether to convert relative urls to absolute
+#' @param USE.NAMES Return relative links as names when absolute = FALSE
 #' @return character verctor of urls
 #' @author jefferis
 #' @export

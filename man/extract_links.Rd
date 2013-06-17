@@ -2,9 +2,9 @@
 \alias{extract_links}
 \title{Extract the links from text of a web page}
 \usage{
-  extract_links(body, linktype = "href", regex,
+  extract_links(body, linktype = "href", regex = NULL,
     fixed = FALSE, rooturl = attr(body, "url"),
-    absolute = TRUE)
+    absolute = TRUE, USE.NAMES = FALSE)
 }
 \arguments{
   \item{body}{Raw text of web page}
@@ -19,6 +19,9 @@
 
   \item{absolute}{Whether to convert relative urls to
   absolute}
+
+  \item{USE.NAMES}{Return relative links as names when
+  absolute = FALSE}
 }
 \value{
   character verctor of urls
