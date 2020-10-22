@@ -3,21 +3,11 @@
 ## Installation
 Currently there isn't a released version on [CRAN](http://cran.r-project.org/).
 
-### Released versions
-The recommendation is to install from our lab repository:
+Therefore the recommendation is to install from github using the **remotes** package to install the development version:
 
 ```r
-install.packages("gscraper",repos='http://jefferislab.org/R',type='source')
+# install.packages("remotes")
+remotes::install_github("gscraper/jefferis")
 ```
 
-### Bleeding Edge
-You can, however, download the [tar ball](https://github.com/jefferis/gscraper/tarball/master), and run `R CMD INSTALL` on it, or use the **devtools** package to install the development version:
-
-```r
-# install.packages("devtools")
-
-library(devtools)
-install_github("gscraper", "jefferis")
-```
-
-Note: Windows users need [Rtools](http://www.murdoch-sutherland.com/Rtools/) and [devtools](http://CRAN.R-project.org/package=devtools) to install this way.
+Note: Windows users need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) to install this way.
